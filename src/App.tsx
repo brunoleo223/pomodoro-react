@@ -1,19 +1,16 @@
+import { BrowserRouter } from "react-router-dom"
 import { ThemeProvider } from "styled-components"
-import { ButtonContainer } from "./Button.styles"
-import { GlobalStyle } from "./styles/global"
+import { Router } from "./Router"
 import { defaultTheme } from "./styles/theme/default"
 
 function App() {
 
   return (
-    <ThemeProvider theme={defaultTheme} >
-      <ButtonContainer variant="primary">Oi</ButtonContainer>
-      <ButtonContainer variant="secondary">Oi</ButtonContainer>
-      <ButtonContainer variant="danger">Oi</ButtonContainer>
-      <ButtonContainer variant="success">Oi</ButtonContainer>
-      <ButtonContainer>Oi</ButtonContainer>
-      <GlobalStyle />
-    </ThemeProvider>
+    <BrowserRouter>
+      <ThemeProvider theme={defaultTheme} >
+        <Router />
+      </ThemeProvider>
+    </BrowserRouter>
   )
 }
 
